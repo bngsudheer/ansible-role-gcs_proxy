@@ -1,0 +1,23 @@
+---
+# tasks file for ansible-role-gcs_proxy
+# Assumes 64 bit Linux
+- name: Download Google Cloud SQL Proxy
+  get_url: 
+    dest: /usr/local/bin/cloud_sql_proxy
+    url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 
+    mode: u+x
+
+- name: User account for Google Cloud SQL proxy
+  user:
+      name: gcsql_proxy
+      system: yes
+      createhome: no
+
+- template:
+    src: usr/lib/systemd/system/gcsql_proxy.service
+    dest: /usr/lib/systemd/system/
+
+- service:
+    state: started
+    enabled: yes
+    name: gcsql_proxy
