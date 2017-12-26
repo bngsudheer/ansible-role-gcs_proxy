@@ -1,6 +1,10 @@
 ---
 # tasks file for ansible-role-gcs_proxy
 # Assumes 64 bit Linux
+- name: Install the MySQL client library
+  yum: 
+    name: mysql
+
 - name: Download Google Cloud SQL Proxy
   get_url: 
     dest: /usr/local/bin/cloud_sql_proxy
@@ -21,3 +25,4 @@
     state: started
     enabled: yes
     name: gcsql_proxy
+
