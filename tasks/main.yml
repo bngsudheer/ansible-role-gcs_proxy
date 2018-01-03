@@ -17,7 +17,8 @@
       system: yes
       createhome: no
 
-- template:
+- name: systemd unit for Google Cloud SQL proxy
+  template:
     src: usr/lib/systemd/system/gcsql_proxy.service
     dest: /usr/lib/systemd/system/
 
@@ -25,4 +26,3 @@
     state: started
     enabled: yes
     name: gcsql_proxy
-
