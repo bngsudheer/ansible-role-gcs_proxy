@@ -34,16 +34,9 @@ galaxy_info:
   # platforms is a list of platforms, and each platform has a name and a list of versions.
   #
   platforms:
-   - name: Fedora
-     versions:
-        - 27
-  #   - all
    - name: EL
      versions:
         - 7
-  #   - all
-  #   - 1.0
-  #   - 99.99
 
   galaxy_tags: 
     - Google Cloud Platform
