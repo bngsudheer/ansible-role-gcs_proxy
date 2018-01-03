@@ -13,7 +13,7 @@ We recommend using the role [CentOS Base](https://galaxy.ansible.com/bngsudheer/
 Role Variables
 --------------
 
-* gcs_proxy_instances: <YOUR INSTANCE CONNECTIO NAME>
+* gcs_proxy_instances: <YOUR INSTANCE CONNECTION NAME>
 * gcs_proxy_credential_file: <PATH_TO_KEY_FILE>
 
 Dependencies
