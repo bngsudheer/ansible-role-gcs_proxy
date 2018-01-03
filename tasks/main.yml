@@ -10,6 +10,7 @@
     dest: /usr/local/bin/cloud_sql_proxy
     url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 
     mode: u+x
+    owner: gcsql_proxy
 
 - name: User account for Google Cloud SQL proxy
   user:

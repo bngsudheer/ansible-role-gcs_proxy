@@ -6,6 +6,7 @@ Description=Google Cloud Compute Engine SQL Proxy
 
 [Service]
 Type=simple
+PermissionsStartOnly=true
 ExecStartPre=-/usr/bin/mkdir /var/run/gcsql_proxy
 ExecStartPre=/usr/bin/chown gcsql_proxy.gcsql_proxy /var/run/gcsql_proxy
 WorkingDirectory=/var/run/gcsql_proxy
