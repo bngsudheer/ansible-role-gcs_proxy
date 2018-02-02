@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    - gcs_proxy_instances: core-computer-xxx:xx-xx:xxxx
+  roles:
+    - role: ansible-role-gcs_proxy
