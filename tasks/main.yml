@@ -23,7 +23,8 @@
     src: usr/lib/systemd/system/gcsql_proxy.service
     dest: /usr/lib/systemd/system/
 
-- service:
+- systemd:
+    daemon_reload: yes
     state: started
     enabled: yes
     name: gcsql_proxy

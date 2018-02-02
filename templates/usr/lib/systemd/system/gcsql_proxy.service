@@ -7,9 +7,7 @@ Description=Google Cloud Compute Engine SQL Proxy
 [Service]
 Type=simple
 PermissionsStartOnly=true
-ExecStartPre=-/usr/bin/mkdir /var/run/gcsql_proxy
-ExecStartPre=/usr/bin/chown gcsql_proxy.gcsql_proxy /var/run/gcsql_proxy
-WorkingDirectory=/var/run/gcsql_proxy
+RuntimeDirectory=gcsql_proxy
 {% if gcs_proxy_credential_file %}
 ExecStart=/usr/local/bin/cloud_sql_proxy -dir=/var/run/gcsql_proxy -instances={{ gcs_proxy_instances }}=tcp:3306 -credential_file={{ gcs_proxy_credential_file }}
 {% else %}
@@ -18,3 +16,4 @@ ExecStart=/usr/local/bin/cloud_sql_proxy -dir=/var/run/gcsql_proxy -instances={{
 Restart=always
 StandardOutput=journal
 User=gcsql_proxy
+Group=gcsql_proxy
