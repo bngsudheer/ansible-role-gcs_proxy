@@ -4,5 +4,7 @@
   vars:
     - gcs_proxy_instances: core-computer-xxx:xx-xx:xxxx
     - gcsql_proxy_start_service: false
+    - centos_base_install_selinux_packages: true
   roles:
-    - role: ansible-role-gcs_proxy
+    - bngsudheer.centos_base
+    - ansible-role-gcs_proxy

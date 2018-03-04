@@ -5,3 +5,4 @@ gcs_proxy_credential_file:
 # the program quits if it cannot connect to Google Cloud SQL service
 # therefore making it hard to test
 gcsql_proxy_start_service: true
+gcsql_proxy_configure_selinux: false
