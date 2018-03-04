@@ -3,5 +3,6 @@
   hosts: all
   vars:
     - gcs_proxy_instances: core-computer-xxx:xx-xx:xxxx
+    - gcsql_proxy_start_service: false
   roles:
     - role: ansible-role-gcs_proxy

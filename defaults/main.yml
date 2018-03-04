@@ -1,3 +1,7 @@
 ---
 # defaults file for ansible-role-gcs_proxy
 gcs_proxy_credential_file:
+# To be used in during development
+# the program quits if it cannot connect to Google Cloud SQL service
+# therefore making it hard to test
+gcsql_proxy_start_service: true

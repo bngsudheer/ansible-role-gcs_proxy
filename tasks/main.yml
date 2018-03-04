@@ -1,5 +1,4 @@
 ---
-# tasks file for ansible-role-gcs_proxy
 # Assumes 64 bit Linux
 - name: Install the MySQL client library
   yum:
@@ -8,8 +7,8 @@
 - name: User account for Google Cloud SQL proxy
   user:
     name: gcsql_proxy
-    system: "yes"
-    createhome: "no"
+    system: true
+    createhome: false
 
 - name: Download Google Cloud SQL Proxy
   get_url:
@@ -23,8 +22,15 @@
     src: usr/lib/systemd/system/gcsql_proxy.service
     dest: /usr/lib/systemd/system/
 
-- name: Start and enable the systemd unit
+- name: Start the systemd unit
   systemd:
+    daemon_reload: true
     state: started
-    enabled: "yes"
+    enabled: true
+    name: gcsql_proxy
+  when: gcsql_proxy_start_service
+
+- name: Enable the systemd unit
+  systemd:
+    enabled: true
     name: gcsql_proxy

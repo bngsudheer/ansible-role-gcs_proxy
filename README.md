@@ -1,8 +1,8 @@
 Role Description
 =========
 
-Role to install Google Cloud Proxy on Google Cloud Compute instance. 
-See Google's documentation on [connecting to Cloud SQL from Compute Engine](https://cloud.google.com/sql/docs/mysql/connect-compute-engine). 
+Role to install Google Cloud Proxy on Google Cloud Compute instance.
+See Google's documentation on [connecting to Cloud SQL from Compute Engine](https://cloud.google.com/sql/docs/mysql/connect-compute-engine).
 
 Starting And Stopping The service
 ----------------
@@ -35,13 +35,13 @@ Example Playbook
 
 ```yml
   - hosts: servers
-    vars: 
-      - gcs_proxy_instances: <YOUR INSTANCE CONNECTIO NAME>
+    vars:
+      - gcs_proxy_instances: <YOUR INSTANCE CONNECTION NAME>
       - gcs_proxy_credential_file: <PATH_TO_KEY_FILE>
     remote_user: <YOUR REMOTE USER>
     become: yes
     roles:
-      - bngsudheer.gcsql_proxy 
+      - bngsudheer.gcsql_proxy
 ```
 
 License
