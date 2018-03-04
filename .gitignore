@@ -4,3 +4,4 @@ molecule/**/.molecule/
 *.pyc
 molecule/**/.pytest_cache
 molecule/**/.molecule/
+molecule/**/tests/__pycache__/
